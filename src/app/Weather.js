@@ -11,9 +11,8 @@ export class Weather {
     //bring and return weather info of a city and country code from an API on internet
     async getWeather() {
         const URI = `http://api.openweathermap.org/data/2.5/weather?q=${this.city},${this.countryCode}&appid=${this.apiKey}`;
-        const data = await fetch(URI);
-        //const response = await fetch(URI);
-        //const data = response.json();
+        const response = await fetch(URI);
+        const data = await response.json();
         return data;
     }
 
